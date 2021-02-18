@@ -15,7 +15,9 @@
 	<description>Demo project for Spring Boot</description>
 	<properties>
 		<java.version>1.8</java.version>
+		<basedir>C:/Users/user/Documents/workspace-spring-tool-suite-4-4.9.0.RELEASE/shop</basedir>
 	</properties>
+	
 	<dependencies>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -37,6 +39,22 @@
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
+		
+		<!-- https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-data-jpa -->
+		<dependency>
+		    <groupId>org.springframework.boot</groupId>
+		    <artifactId>spring-boot-starter-data-jpa</artifactId>
+		</dependency>
+		
+		<!-- https://mvnrepository.com/artifact/com.oracle/ojdbc7 -->
+		<dependency>
+		    <groupId>com.oracle</groupId>
+		    <artifactId>ojdbc7</artifactId>
+		    <version>11.1.0</version>
+		    <scope>system</scope>
+		    <systemPath>${basedir}/src/main/resources/lib/ojdbc7.jar</systemPath>
+		</dependency>
+
 	</dependencies>
 
 	<build>
