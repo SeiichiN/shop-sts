@@ -3,10 +3,10 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<parent>
-		<groupId>org.springframework.boot</groupId>
-		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>2.4.2</version>
-		<relativePath/> <!-- lookup parent from repository -->
+	  <groupId>org.springframework.boot</groupId>
+	  <artifactId>spring-boot-starter-parent</artifactId>
+	  <version>2.4.2</version>
+	  <relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>jp.co.sss.shop</groupId>
 	<artifactId>shop</artifactId>
@@ -14,8 +14,9 @@
 	<name>shop</name>
 	<description>Demo project for Spring Boot</description>
 	<properties>
-		<java.version>1.8</java.version>
-		<basedir>C:/Users/user/Documents/workspace-spring-tool-suite-4-4.9.0.RELEASE/shop</basedir>
+	  <java.version>1.8</java.version>
+      <!-- <basedir>C:/Users/user/Documents/workspace-spring-tool-suite-4-4.9.0.RELEASE/shop</basedir> -->
+      <basedir>/home/se-ichi/git/shop-sts</basedir>
 	</properties>
 	
 	<dependencies>
@@ -54,7 +55,6 @@
 		    <scope>system</scope>
 		    <systemPath>${basedir}/src/main/resources/lib/ojdbc7.jar</systemPath>
 		</dependency>
-
 	</dependencies>
 
 	<build>
@@ -67,3 +67,5 @@
 	</build>
 
 </project>
+
+<!-- 修正時刻: Sat Feb 20 06:54:34 2021 -->
