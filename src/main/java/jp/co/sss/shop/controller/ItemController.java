@@ -30,4 +30,13 @@ public class ItemController {
 		model.addAttribute("items", repository.findByPrice( price ));
 		return "items/item_list";
 	}
+	
+	@RequestMapping("/items/findByNameAndPrice/{name}/{price}")
+	public String showItemListByNameAndPrice( 
+			@PathVariable String name, 
+			@PathVariable int price,
+			Model model ) {
+		model.addAttribute("items", repository.findByNameAndPrice(name, price));
+		return "items/item_list";
+	}
 }
