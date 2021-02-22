@@ -15,7 +15,7 @@
 	<description>Demo project for Spring Boot</description>
 	<properties>
 		<java.version>1.8</java.version>
-		<basedir>C:\Users\user\git\shop-sts</basedir>
+		<basedir>C:/Users/user/Documents/workspace-spring-tool-suite-4-4.9.0.RELEASE/shop</basedir>
 	</properties>
 	
 	<dependencies>
