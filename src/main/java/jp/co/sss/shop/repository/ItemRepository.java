@@ -8,4 +8,6 @@ public interface ItemRepository extends JpaRepository<Item, Integer> {
 	List<Item> findByPrice( Integer price );
 	
 	List<Item> findByNameAndPrice( String name, Integer price );
+	
+	List<Item> findByNameLike (String name);
 }

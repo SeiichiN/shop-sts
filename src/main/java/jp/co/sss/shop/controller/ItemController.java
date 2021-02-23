@@ -39,4 +39,10 @@ public class ItemController {
 		model.addAttribute("items", repository.findByNameAndPrice(name, price));
 		return "items/item_list";
 	}
+	
+	@RequestMapping ("/items/findByNameLike/{name}")
+	public String showItemListByNameLike (@PathVariable String name, Model model) {
+		model.addAttribute("items", repository.findByNameLike("%" + name + "%"));
+		return "items/item_list";
+	}
 }
