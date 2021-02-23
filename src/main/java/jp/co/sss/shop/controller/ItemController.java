@@ -5,7 +5,10 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 
+import jp.co.sss.shop.entity.Item;
+import jp.co.sss.shop.form.ItemForm;
 import jp.co.sss.shop.repository.ItemRepository;
 
 @Controller
@@ -44,5 +47,20 @@ public class ItemController {
 	public String showItemListByNameLike (@PathVariable String name, Model model) {
 		model.addAttribute("items", repository.findByNameLike("%" + name + "%"));
 		return "items/item_list";
+	}
+	
+	@RequestMapping ("/items/create/input")
+	public String createInput () {
+		return "items/create_input";
+	}
+	
+	@RequestMapping (path = "/items/create/complete", method = RequestMethod.POST)
+	public String createComplete (ItemForm form) {
+		Item item = new Item();
+		item.setName (form.getName());
+		item.setPrice(form.getPrice());
+		repository.save(item);
+		
+		return "redirect:/items/getOne/" + item.getId();
 	}
 }
