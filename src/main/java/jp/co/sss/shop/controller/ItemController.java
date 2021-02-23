@@ -80,4 +80,15 @@ public class ItemController {
 		
 		return "redirect:/items/getOne/" + item.getId();
 	}
+	
+	@RequestMapping(path = "/items/delete/input")
+	public String deleteInput() {
+		return "items/delete_input";
+	}
+	
+	@RequestMapping(path = "/items/delete/complete")
+	public String deleteComplete(ItemForm form) {
+		repository.deleteById(form.getId());
+		return "redirect:/items/findAll";
+	}
 }
