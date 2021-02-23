@@ -61,6 +61,7 @@ public class ItemController {
 		item.setPrice(form.getPrice());
 		repository.save(item);
 		
+		System.out.println(">>>>> item.getId: " + item.getId());
 		return "redirect:/items/getOne/" + item.getId();
 	}
 }
