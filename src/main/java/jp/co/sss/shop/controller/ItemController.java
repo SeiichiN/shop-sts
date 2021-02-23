@@ -64,4 +64,20 @@ public class ItemController {
 		System.out.println(">>>>> item.getId: " + item.getId());
 		return "redirect:/items/getOne/" + item.getId();
 	}
+	
+	@RequestMapping("/items/update/input/{id}")
+	public String updateInput(@PathVariable int id, Model model) {
+		model.addAttribute("item", repository.getOne(id));
+		return "items/update_input";
+	}
+	
+	@RequestMapping(path = "/items/update/complete/{id}", method = RequestMethod.POST)
+	public String updateComplete(@PathVariable int id, ItemForm form) {
+		Item item = repository.getOne(id);
+		item.setName(form.getName());
+		item.setPrice(form.getPrice());
+		repository.save(item);
+		
+		return "redirect:/items/getOne/" + item.getId();
+	}
 }
