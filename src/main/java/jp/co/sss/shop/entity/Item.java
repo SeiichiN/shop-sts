@@ -5,6 +5,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
@@ -22,6 +24,10 @@ public class Item {
 	@Column
 	private Integer price;
 	
+	@ManyToOne
+	@JoinColumn( name = "category_id", referencedColumnName = "id" )
+	private Category category;
+	
 	public Integer getId() { return id; }
 	public String getName() { return name; }
 	public Integer getPrice() { return price; }
@@ -37,4 +43,11 @@ public class Item {
 	public void setPrice( Integer price ) {
 		this.price = price;
 	}
+	public Category getCategory() {
+		return category;
+	}
+	public void setCategory(Category category) {
+		this.category = category;
+	}
+	
 }

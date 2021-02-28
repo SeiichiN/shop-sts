@@ -49,6 +49,12 @@ public class ItemController {
 		return "items/item_list";
 	}
 	
+	@RequestMapping("/items/findItemAndCategory")
+	public String showItemAndCategoryList( Model model ) {
+		model.addAttribute("items", repository.findAll());
+		return "items/item_category_list";
+	}
+	
 	@RequestMapping ("/items/create/input")
 	public String createInput () {
 		return "items/create_input";
